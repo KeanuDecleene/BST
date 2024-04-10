@@ -21,8 +21,12 @@ public class StrBST{
      * traverses the tree using recursion and prints the values in order.
      * 
      */
-    public void traversal(){
-
+    public void traverseInOrder(Node node){
+        if (node != null){
+            traverseInOrder(node._left);
+            System.out.print(" " + node._value);
+            traverseInOrder(node._right);
+        }
     }
 
     /*
@@ -31,8 +35,29 @@ public class StrBST{
      * @return the height of the tree
      */
     public int height(){
-        return 0;
+        int height = height(_root);
+        return height;
     }
+
+    /*
+    * Calculates the height of the tree or subtree rooted at the given node.
+    * This method uses recursion to calculate the height.
+    *
+    * @param node The root node of the tree or subtree whose height is to be calculated.
+    * @return The height of the tree or subtree
+    */
+    private int height(Node node){
+        if (node == null) {return 0;}
+        else {
+            int lHeight = height(node._left);
+            int rHeight = height(node._right);
+            return (lHeight > rHeight) ? lHeight + 1 : rHeight + 1; // returns the larger height of the subtrees
+        }
+
+    }
+
+        
+
     /*
      * inserts the value into the BST using recursion and assumes duplicates are not allowed.
      * 
@@ -59,8 +84,23 @@ public class StrBST{
      * @param s the value to be removed from the BST
      */
     public void remove(String s){
-
+        //_root = remove(_root, s);
     }
+  
+    /* 
+    private Node remove(Node node, String value){
+        if (node == null) {return node;}
+        if (value.compareTo(node._value) < 0){
+            node._left = remove(node._left, value);
+        }
+        else if (value.compareTo(node._value) > 0){
+            node._right = remove(node._right, value);
+        }
+        else {
+
+        }
+    }
+    */
 
     /*  
      * searches the tree to find the specified value using recursion and returns the boolean true,
@@ -69,7 +109,34 @@ public class StrBST{
      * @param s the value to be searched for in the BST.
      */
     public boolean search(String s){
-        return false;
+        return search(_root, s);
+    }
+
+    /*
+     * Searches for a specific value within the binary search tree starting from a given node.
+     * This method uses recursion to traverse the tree. It compares the target value with the current node's value
+     * to decide whether to search in the left or right subtree or if the value is found.
+     *
+     * @param node The starting node for the search.
+     * @param value The value to search for in the tree.
+     * @return true if the value is found in the tree, false otherwise.
+     */
+    private boolean search(Node node, String value){
+        if(node == null){
+            return false;
+        }
+        else if(node._value == value){
+            return true;
+        }
+        else if(value.compareTo(node._value) < 0){
+            return search(node._left, value);
+        }
+        else if (value.compareTo(node._value) > 0){
+            return search(node._right, value);
+        }
+        else{
+            return false;
+        }
     }
 
 
