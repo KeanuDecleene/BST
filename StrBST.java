@@ -82,12 +82,16 @@ public class StrBST{
      * @param s the value to be removed from the BST
      */
     public void remove(String s){
-        _root = remove(_root, s); //sets node to the value parsed
+        _root = remove(_root, s); // removes the value 
     }
     
     /*
      * Searches for the node to remove then deals with the case where the node is a leaf node,
      * or a parent node with one or more children. 
+     * 
+     * @param node the node to search
+     * @param value the value to be removed from the BST
+     * @return the node to remove &
      */
     private Node remove(Node node, String value){
         //search for the node to remove 
