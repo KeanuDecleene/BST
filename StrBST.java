@@ -84,10 +84,10 @@ public class StrBST{
      * @param s the value to be removed from the BST
      */
     public void remove(String s){
-        //_root = remove(_root, s);
+        _root = remove(_root, s);
     }
   
-    /* 
+    
     private Node remove(Node node, String value){
         if (node == null) {return node;}
         if (value.compareTo(node._value) < 0){
@@ -97,10 +97,15 @@ public class StrBST{
             node._right = remove(node._right, value);
         }
         else {
+            //node is a lead node 
+            if (node._left == null && node._right == null){
+                return null;
+            }
+
 
         }
     }
-    */
+    
 
     /*  
      * searches the tree to find the specified value using recursion and returns the boolean true,
