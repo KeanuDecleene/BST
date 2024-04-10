@@ -15,6 +15,9 @@ public class Main {
         System.out.println(BST2.height());
         BST2.insert("C");
         System.out.println(BST2.height());
-
+        BST.remove("B");
+        BST.remove("C");
+        BST.remove("A");
+        BST.print();
     }
 }

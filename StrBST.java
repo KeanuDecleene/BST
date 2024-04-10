@@ -56,8 +56,6 @@ public class StrBST{
 
     }
 
-        
-
     /*
      * inserts the value into the BST using recursion and assumes duplicates are not allowed.
      * 
@@ -84,11 +82,15 @@ public class StrBST{
      * @param s the value to be removed from the BST
      */
     public void remove(String s){
-        _root = remove(_root, s);
+        _root = remove(_root, s); //sets node to the value parsed
     }
-  
     
+    /*
+     * Searches for the node to remove then deals with the case where the node is a leaf node,
+     * or a parent node with one or more children. 
+     */
     private Node remove(Node node, String value){
+        //search for the node to remove 
         if (node == null) {return node;}
         if (value.compareTo(node._value) < 0){
             node._left = remove(node._left, value);
@@ -97,13 +99,38 @@ public class StrBST{
             node._right = remove(node._right, value);
         }
         else {
-            //node is a lead node 
+            //Node is a leaf node 
             if (node._left == null && node._right == null){
                 return null;
             }
-
-
+            //Node has only one child
+            else if(node._left == null){ 
+                return node._right;
+            }
+            else if(node._right == null){
+                return node._left;
+            }
+            //node has two children finds the minimum value in the right subtree
+            else{
+                Node minRight = findMin(node._right);
+                //replace value with the minimum right value
+                node._value = minRight._value;
+                //remove the node with the miminum value 
+                node._right = remove(node._right, minRight._value);
+            }
         }
+        return node;
+    }
+
+    /*
+     * helps find the node with the minimum value using recursion
+     * 
+     */
+    private Node findMin(Node node){
+        if(node._left == null){
+            return node;
+        }
+        return findMin(node._left);
     }
     
 
