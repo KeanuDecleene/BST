@@ -8,7 +8,6 @@
 public class StrBST{
     public Node _root;
 
-
     /* 
      * adds the value to the BST using recursion and, maintains ordering by using the compareTo method.
      * 
@@ -18,6 +17,22 @@ public class StrBST{
         _root = insert(_root, s);
     }
 
+    /*
+     * traverses the tree using recursion and prints the values in order.
+     * 
+     */
+    public void traversal(){
+
+    }
+
+    /*
+     * Finds the height of the tree using recursion.
+     * 
+     * @return the height of the tree
+     */
+    public int height(){
+        return 0;
+    }
     /*
      * inserts the value into the BST using recursion and assumes duplicates are not allowed.
      * 
@@ -57,6 +72,8 @@ public class StrBST{
         return false;
     }
 
+
+
     /*
      * A method that prints out the tree following an in-order traversal with each value on a seperate line using recursion.
      */
@@ -67,7 +84,14 @@ public class StrBST{
     //- a method which prints out the tree following an in-order traversal with
     //each value on a separate line. For example:
     private void print(Node node){
-        
+        if (node!= null){
+            String leftValue = (node._left != null) ? node._left._value : "null"; //checking if the nodes to left or right are null
+            String rightValue = (node._right!= null) ? node._right._value : "null";
+            print(node._left);
+            System.out.println("Root: " + node._value + " | Left: " + leftValue + " | Right: " + rightValue);
+            print(node._right);
+        }
     }
+    
 
 }

@@ -7,6 +7,7 @@ public class Main {
         BST.insert("A");
         BST.insert("E");
         BST.insert("D");
+        BST.print();
 
     }
 }
