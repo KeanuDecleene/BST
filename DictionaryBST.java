@@ -57,7 +57,7 @@ public class DictionaryBST{
             System.out.println("Word/Phrase not found.");
         }
         else if(s.compareTo(node._value) == 0){
-            System.out.println(node._value + ": " + node._definition);
+            System.out.println(node._value + "\n" + node._definition);
         }
         else if(s.compareTo(node._value) < 0){
             printDictionaryItem(node._left, s);
@@ -83,7 +83,7 @@ public class DictionaryBST{
     private void printDictionary(DictionaryNode node){
         if (node != null){
             printDictionary(node._left);
-            System.out.println(node._value + ": " + node._definition);
+            System.out.println(node._value + "\n" + node._definition + "\n");
             printDictionary(node._right);
         }
     }
@@ -124,7 +124,6 @@ public class DictionaryBST{
         _root = remove(_root, s); // removes the value 
     }
     
-
     /*
      * Searches for the node to remove then deals with the case where the node is a leaf node,
      * or a parent node with one or more children. 
@@ -166,9 +165,6 @@ public class DictionaryBST{
         return node;
     }
 
-
-
-
     /*
      * helps find the node with the minimum value using recursion
      * 
@@ -206,7 +202,7 @@ public class DictionaryBST{
         if(node == null){
             return false;
         }
-        else if(node._value == value){
+        else if(node._value.equals(value)){
             return true;
         }
         else if(value.compareTo(node._value) < 0){
@@ -219,8 +215,6 @@ public class DictionaryBST{
             return false;
         }
     }
-
-
 
     /*
      * A method that prints out the tree following an in-order traversal with each value on a seperate line using recursion.
