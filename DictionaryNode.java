@@ -4,7 +4,6 @@
  * @author Keanu De Cleene
  */
 public class DictionaryNode {
-
  public String _value; 
  public DictionaryNode _left;
  public DictionaryNode _right;

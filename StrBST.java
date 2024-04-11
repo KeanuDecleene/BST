@@ -20,6 +20,7 @@ public class StrBST{
     /*
      * traverses the tree using recursion and prints the values in order.
      * 
+     * @param node the node to be traversed
      */
     public void traverseInOrder(Node node){
         if (node != null){
@@ -53,7 +54,6 @@ public class StrBST{
             int rHeight = height(node._right);
             return (lHeight > rHeight) ? lHeight + 1 : rHeight + 1; // returns the larger height of the subtrees
         }
-
     }
 
     /*
@@ -129,6 +129,7 @@ public class StrBST{
     /*
      * helps find the node with the minimum value using recursion
      * 
+     * @param node the node to search
      */
     private Node findMin(Node node){
         if(node._left == null){
@@ -137,7 +138,6 @@ public class StrBST{
         return findMin(node._left);
     }
     
-
     /*  
      * searches the tree to find the specified value using recursion and returns the boolean true,
      * if the value is found, false otherwise.
@@ -175,17 +175,18 @@ public class StrBST{
         }
     }
 
-
-
     /*
-     * A method that prints out the tree following an in-order traversal with each value on a seperate line using recursion.
+     * A method that prints out the tree following each node and its values with its subtrees on a seperate line using recursion.
      */
     public void print(){
         print(_root);
     }
 
-    //- a method which prints out the tree following an in-order traversal with
-    //each value on a separate line. For example:
+    /*
+     * A method that prints out the tree and it's subtrees values in order.
+     * 
+     * @param node the node to be printed with its subtrees.
+     */
     private void print(Node node){
         if (node!= null){
             String leftValue = (node._left != null) ? node._left._value : "null"; //checking if the nodes to left or right are null
@@ -195,6 +196,4 @@ public class StrBST{
             print(node._right);
         }
     }
-    
-
 }

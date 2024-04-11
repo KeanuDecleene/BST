@@ -112,7 +112,6 @@ public class DictionaryBST{
             int rHeight = height(node._right);
             return (lHeight > rHeight) ? lHeight + 1 : rHeight + 1; // returns the larger height of the subtrees
         }
-
     }
 
     /*
@@ -176,7 +175,6 @@ public class DictionaryBST{
         }
         return findMin(node._left);
     }
-    
 
     /*  
      * searches the tree to find the specified value using recursion and returns the boolean true,
@@ -237,6 +235,4 @@ public class DictionaryBST{
             print(node._right);
         }
     }
-    
-
 }

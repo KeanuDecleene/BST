@@ -4,7 +4,6 @@
  * @author Keanu De Cleene
  */
 public class Node {
-
  public String _value; 
  public Node _left;
  public Node _right;
