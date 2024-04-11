@@ -14,7 +14,7 @@ public class Node {
   * @param value the value of the node to enter.
   */
  public Node(String value){
-    _value = value.toUpperCase(); //ensures the value is all uppercase
+    _value = value.toUpperCase(); //ensures the value is uppercase
     _left = null;
     _right = null;
  }

@@ -172,7 +172,7 @@ public class DictionaryLookup{
     public static void main(String[] args) {
         DictionaryLookup dicLookup = new DictionaryLookup();
         System.out.println("Loading dictionary...");
-        dicLookup.loadDictionary("D:/COMPX201 - ASSIGNMENT 2/BST--1/CS-Dictionary-small.txt");
+        dicLookup.loadDictionary("CS-Dictionary-small.txt");
         dicLookup.startDictionaryLookup();
     }
 }
