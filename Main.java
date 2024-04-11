@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+        
         StrBST BST = new StrBST();
         System.out.println("Testing BST");
         BST.insert("C");
@@ -19,5 +20,15 @@ public class Main {
         BST.remove("C");
         BST.remove("A");
         BST.print();
+
+        DictionaryBST DicBST = new DictionaryBST();
+        DicBST.insert("Lol", "Laught out loud");
+        DicBST.insert("Apple", "very good" );
+        DicBST.printDictionaryItem("Lol");
+
+        DicBST.printDictionary();
+
+        DicBST.remove("Apple");
+        DicBST.printDictionary();
     }
 }
